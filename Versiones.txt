@@ -1,0 +1,49 @@
+VERSIÓN 1.1
+# Cambios a la fecha 21-04-2022
+## view/login/:
+- Se relizan cambios al iniciar sesión
+- Se crea archivo cerrar sesión
+- Permite redireccionar a las paginas según el respectivo rol de los usuarios
+- Solo se puede ingresar a las vistas con la variable $_SESSION['id_usuario'] iniciada y que no este vacia.
+
+## Base de datos 
+- Se elimina la variable is admin de usuarios
+- En lugar de utilizar is_admin se ocupa usuario_rol 
+- usuario_rol: 1 -> es admin, 0 -> es usuario
+
+## Views: cambios en las vistas
+- Se reorganizan nuevas vistas 
+- Ahora todas las vistas tienen una pagina de destino ej: view/home/ 
+- todas las vistas cuentan con un mantenedor, el cual permitira realizar los crud con la ayuda de data table
+
+## Controllers: permiten la conexión a las consultas de la bd, se relaciona con models.
+- se creo ctrl_login.php
+
+## Models: permiten la realización de consultas a las bases de datos
+- Se crea Usuario.php
+- Se crea Login.php
+
+VERSIÓN 1.2 
+# Cambios a la fecha 27.04.2022
+
+## Base de datos:
+Se agrega en negocios el campo negocio_estado que permite verificar si el negocio ha sido eliminado o no
+
+## Models:
+- Se crea Negocio.php -> permite generar consultas relacionadas a los negocios de los usuarios
+
+## Controllers: 
+- Se crea el controlador de negocios que con un menú obtiene las distintas tareas a realizar, ese archivo es llamado gracias a mnt_negocios.js
+
+## Funcionalidades
+- Funciona en su totalidad el modulo de negocios
+- Funciona casi en su totalidad el modulo de usuarios, solo falta la función de asignar negocios 
+(Actualmente se consigue conseguir los nombres pero no los valores del id)
+- transacciones esta casi funcionando se necesita realizar la funcionalidad de asignar negocios
+- Se crea pantalla para transacciones
+
+## Views: 
+- Todas las vistas tienen su respectivo archivo js, el cual permite generar las llamadas a los controladores.
+
+## Bugs por solucionar:
+- se necesita solucionar el perfil del usuario
